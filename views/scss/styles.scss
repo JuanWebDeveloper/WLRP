@@ -1,8 +1,13 @@
 // Import variables and functions
+@import './variables/animations';
 @import './variables/box';
 @import './variables/colors';
 @import './variables/fonts';
 @import './variables/functions';
+@import './variables/shadow';
 
 // Import global styles
 @import './globals';
+
+// Import component styles
+@import './components/navbar.scss';

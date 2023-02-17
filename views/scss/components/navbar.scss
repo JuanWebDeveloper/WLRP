@@ -1,0 +1,183 @@
+.navbar {
+  align-items: center;
+  display: flex;
+  left: 0;
+  height: 70px;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  transition: $transition-bezier;
+  width: 100vw;
+  z-index: 10;
+
+  .logo {
+    height: 90%;
+    width: 200px;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .bars {
+    cursor: pointer;
+    display: none;
+
+    .bar {
+      background-color: $black;
+      border-radius: 5px;
+      height: 3px;
+      transition: $transition-bezier;
+      width: 30px;
+
+      &:nth-child(1) {
+        margin-bottom: $mrg-quarter;
+      }
+
+      &:nth-child(2) {
+        margin-bottom: $mrg-quarter;
+      }
+    }
+
+    &.active {
+      .bar {
+        background-color: $blue;
+
+        &:nth-child(1) {
+          height: 0;
+          opacity: 0;
+          margin-bottom: 0;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(45deg);
+          margin-bottom: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .navigation {
+    height: 100%;
+
+    li {
+      cursor: pointer;
+      display: inline-block;
+      height: 100%;
+      margin: 0 $mrg-onehalf;
+      position: relative;
+      padding: 0 $pad-quarter;
+      z-index: 1;
+
+      &::after {
+        @include scaleX-out;
+        background-color: $blue;
+        bottom: 0;
+        content: '';
+        height: 3px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+      }
+
+      a {
+        align-items: center;
+        display: inline-flex;
+        color: $black;
+        font-size: toRem(1.15);
+        font-family: $family-title;
+        height: 100%;
+        text-transform: capitalize;
+        transition: $transition-bezier;
+      }
+
+      &:hover {
+        &::after {
+          @include scaleX-in;
+        }
+
+        a {
+          color: $blue;
+        }
+      }
+
+      @media (max-width: 1199px) {
+        margin: 0 $mrg-half;
+
+        a {
+          font-size: toRem(1);
+        }
+      }
+
+      @media (max-width: 990px) {
+        margin: $mrg-onehalf 0;
+        padding: 0;
+        width: 4px;
+
+        &:after {
+          @include scaleY-out;
+          background-color: $white;
+          height: 100%;
+        }
+
+        a {
+          color: $white;
+          font-size: toRem(1.5);
+          opacity: 0.8;
+          margin-left: $mrg-half;
+          white-space: pre;
+        }
+
+        &:hover {
+          a {
+            color: $white;
+            opacity: 1;
+            text-shadow: 0 0 2px rgba($white, 0.8), 0 0 2px rgba($white, 0.8);
+          }
+
+          &::after {
+            @include scaleY-in;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 990px) {
+      background: rgba($blue, 0.9);
+      background: -webkit-linear-gradient(to right, rgba($blue-1, 0.9), rgba($blue-2, 0.9), rgba($blue, 0.9));
+      background: linear-gradient(to right, rgba($blue-1, 0.9), rgba($blue-2, 0.9), rgba($blue, 0.9));
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      left: -100%;
+      position: absolute;
+      top: 70px;
+      transition: $transition-bezier;
+      scale: 0;
+      width: 100vw;
+      z-index: 10;
+
+      &.active {
+        left: 0;
+        scale: 1;
+      }
+    }
+  }
+
+  &.active {
+    background-color: $primary;
+    box-shadow: $shadow-primary;
+  }
+
+  @media (max-width: 990px) {
+    .bars {
+      display: block;
+    }
+  }
+}

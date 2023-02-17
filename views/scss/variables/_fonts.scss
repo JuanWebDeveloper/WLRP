@@ -1,12 +1,14 @@
 // Fonts import
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$family: 'Noto Sans', sans-serif;
+$family-title: 'Noto Sans', 'Montserrat', sans-serif;
+$family-text: 'Montserrat', 'Noto Sans', sans-serif;
 
 // Custom font class
 @mixin title {
   color: $blue;
-  font-family: $family;
+  font-family: $family-title;
   font-size: toRem(3);
   font-weight: 700;
   line-height: toRem(2.75);
@@ -19,7 +21,7 @@ $family: 'Noto Sans', sans-serif;
 
 @mixin subtitle {
   color: $blue;
-  font-family: $family;
+  font-family: $family-title;
   font-size: toRem(2.5);
   font-weight: 600;
   line-height: toRem(2.5);
@@ -32,7 +34,7 @@ $family: 'Noto Sans', sans-serif;
 
 @mixin text {
   color: $black;
-  font-family: $family;
+  font-family: $family-text;
   font-size: toRem(1.1);
   font-weight: 400;
 }
