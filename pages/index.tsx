@@ -1,16 +1,17 @@
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, est officiis! Maiores quam voluptatibus repellat
-        laboriosam unde ad excepturi nobis nulla dolore explicabo perspiciatis quos repellendus perferendis eveniet
-        beatae nesciunt architecto placeat dicta odio dolores totam debitis, quo rem? Est consequatur libero facilis
-        provident, accusamus eos nam adipisci velit molestias dolor quia doloribus esse. Dolore facere ipsum ratione
-        assumenda quasi reiciendis possimus quod! Accusantium molestias, sed aut cupiditate delectus qui fugiat iste
-        veritatis. Cum, minima numquam laboriosam quia corrupti laudantium omnis quisquam reiciendis provident dicta
-        accusantium eligendi ratione nisi et voluptas porro iste sed labore dolorem illum necessitatibus rem tenetur.
-      </p>
+    <div className='home'>
+      <div className='content'>
+        <div className='text'>
+          <h1>WLRP: World Recipes</h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi accusantium iusto explicabo, repellendus
+            quos nulla nemo facere aspernatur dignissimos earum doloremque ab accusamus reprehenderit alias
+            necessitatibus, enim eum! Blanditiis quos ab enim quas nemo omnis ratione illum aspernatur quod, ea quidem
+            beatae sapiente, asperiores accusamus temporibus optio quibusdam in! Perferendis.
+          </p>
+        </div>
+      </div>
     </div>
   );
 };

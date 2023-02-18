@@ -1,0 +1,53 @@
+.home {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+
+  .content {
+    position: relative;
+    width: 100%;
+
+    .text {
+      background-color: rgba($tertiary, 0.8);
+      box-shadow: $shadow-primary;
+      border-radius: 5px;
+      left: 50%;
+      margin-top: 35vh;
+      position: relative;
+      padding: $pad-base;
+      transform: translateX(-50%);
+      width: 60vw;
+      z-index: 2;
+
+      h1 {
+        text-align: center;
+      }
+
+      @media (max-width: 990px) {
+        width: 90vw;
+      }
+    }
+  }
+
+  &::after {
+    background: url(../../../public/header.png);
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: rgba($black, 0.9);
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
