@@ -1,11 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 export const Navbar = () => {
+  const [onScroll, setOnScroll] = useState(false);
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       const navbar = document.querySelector('.navbar');
-      window.scrollY >= 40 ? navbar?.classList.add('active') : navbar?.classList.remove('active');
+
+      if (window.scrollY >= 40) {
+        navbar?.classList.add('active');
+        setOnScroll(true);
+      } else {
+        navbar?.classList.remove('active');
+        setOnScroll(false);
+      }
     });
   }, []);
 
@@ -24,7 +33,12 @@ export const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='logo'>
-        <Image src={'/logo.svg'} alt={'WLRP application logo'} width={679} height={195} />
+        <Image
+          src={onScroll ? '/logo-dark.svg' : '/logo-white.svg'}
+          alt={'WLRP application logo'}
+          width={679}
+          height={195}
+        />
       </div>
 
       <div className='bars' onClick={toggleNavigation}>

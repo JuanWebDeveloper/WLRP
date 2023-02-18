@@ -1,9 +1,9 @@
 .navbar {
   align-items: center;
   display: flex;
-  left: 0;
   height: 70px;
   justify-content: space-around;
+  left: 0;
   position: fixed;
   top: 0;
   transition: $transition-bezier;
@@ -25,7 +25,7 @@
     display: none;
 
     .bar {
-      background-color: $black;
+      background-color: $white;
       border-radius: 5px;
       height: 3px;
       transition: $transition-bezier;
@@ -89,7 +89,7 @@
       a {
         align-items: center;
         display: inline-flex;
-        color: $black;
+        color: $white;
         font-size: toRem(1.15);
         font-family: $family-title;
         height: 100%;
@@ -173,6 +173,34 @@
   &.active {
     background-color: $primary;
     box-shadow: $shadow-primary;
+
+    .bars {
+      .bar {
+        background-color: $black;
+      }
+
+      &.active {
+        .bar {
+          background-color: $blue;
+        }
+      }
+    }
+
+    .navigation {
+      li {
+        a {
+          color: $black;
+        }
+      }
+
+      @media (max-width: 990px) {
+        li {
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 
   @media (max-width: 990px) {
