@@ -6,6 +6,7 @@
   .content {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto;
     position: relative;
@@ -79,6 +80,20 @@
           }
         }
       }
+
+      @media (max-width: 990px) {
+        justify-content: space-evenly;
+        margin-bottom: $mrg-onehalf;
+        width: 70%;
+
+        .grid-item {
+          width: 20%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
     .search {
@@ -130,6 +145,16 @@
 
       &:hover {
         scale: 1.05;
+      }
+
+      @media (max-width: 990px) {
+        width: 100%;
+      }
+
+      @media (max-width: 400px) {
+        input {
+          font-size: toRem(1);
+        }
       }
     }
   }
