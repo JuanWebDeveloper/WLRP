@@ -1,0 +1,54 @@
+.card {
+  background-color: $tertiary;
+  box-shadow: $shadow-primary;
+  border-radius: 5px;
+  margin-bottom: $mrg-double;
+  position: relative;
+  padding: $pad-quarter;
+  transition: $transition-bezier;
+
+  .content {
+    position: relative;
+    width: 100%;
+
+    h3 {
+      text-align: center;
+      text-transform: capitalize;
+      transition: $transition-bezier;
+    }
+
+    .dish-image {
+      box-shadow: $shadow-primary;
+      margin: $mrg-onehalf auto;
+      position: relative;
+      transition: $transition-bezier;
+
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .card-footer {
+      text-align: center;
+
+      button {
+        box-shadow: $shadow-tertiary;
+        border: none;
+        border-radius: 5px;
+        color: $white;
+        font-family: $family-title;
+        font-weight: 500;
+        font-size: toRem(1.25);
+        margin: $mrg-quarter 0;
+        padding: $pad-quarter;
+        transition: $transition-bezier;
+
+        &:hover {
+          scale: 1.04;
+          box-shadow: $shadow-secondary;
+        }
+      }
+    }
+  }
+}

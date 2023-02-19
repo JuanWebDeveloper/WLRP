@@ -27,6 +27,146 @@ P {
   margin-bottom: $mrg-half;
 }
 
-main {
-  padding-top: 70px;
+// Custom classes style
+.cards {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: $mrg-triple;
+  width: 100%;
+
+  &.fourParts {
+    .card {
+      width: 20%;
+
+      .content {
+        h3 {
+          font-size: toRem(1.7);
+        }
+
+        .dish-image {
+          margin: $mrg-base auto;
+          width: 90%;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .content {
+          h3 {
+            font-size: toRem(1.25);
+            line-height: toRem(1.5);
+          }
+
+          .card-footer {
+            button {
+              font-size: toRem(1);
+            }
+          }
+        }
+      }
+
+      @media (max-width: 990px) {
+        width: 70%;
+
+        .content {
+          h3 {
+            font-size: toRem(2.3);
+            line-height: toRem(2);
+          }
+
+          .dish-image {
+            width: 60%;
+          }
+        }
+      }
+
+      @media (max-width: 768px) {
+        .content {
+          h3 {
+            font-size: toRem(2);
+          }
+
+          .dish-image {
+            width: 50%;
+          }
+        }
+      }
+
+      @media (max-width: 550px) {
+        width: 90%;
+
+        .content {
+          .dish-image {
+            width: 60%;
+          }
+        }
+      }
+
+      @media (max-width: 450px) {
+        .content {
+          h3 {
+            font-size: toRem(1.8);
+          }
+
+          .dish-image {
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  &.threeParts {
+    .card {
+      width: 30%;
+
+      .content {
+        .dish-image {
+          width: 70%;
+        }
+      }
+
+      @media (max-width: 1368px) {
+        .content {
+          h3 {
+            font-size: toRem(2.3);
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .content {
+          h3 {
+            font-size: toRem(1.9);
+          }
+        }
+      }
+    }
+  }
+
+  &.twoParts {
+    .card {
+      width: 40%;
+
+      .content {
+        .dish-image {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+.button-color {
+  background: $blue;
+  background: -webkit-linear-gradient(to top, $blue-1, $blue-2, $blue);
+  background: linear-gradient(to top, $blue-1, $blue-2, $blue);
+  cursor: pointer;
+  transition: $transition-bezier;
+
+  &:hover {
+    background: -webkit-linear-gradient(to right, $blue-1, $blue-2, $blue);
+    background: linear-gradient(to right, $blue-1, $blue-2, $blue);
+  }
 }

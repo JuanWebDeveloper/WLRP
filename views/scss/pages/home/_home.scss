@@ -6,38 +6,6 @@
   .content {
     position: relative;
     width: 100%;
-
-    .reset {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      margin-top: $mrg-triple;
-      width: 100%;
-
-      div {
-        background-color: $secondary;
-        box-shadow: $shadow-primary;
-        height: 250px;
-        margin-bottom: $mrg-double;
-        transition: $transition-bezier;
-      }
-
-      &.fourParts {
-        div {
-          width: 20%;
-        }
-      }
-      &.threeParts {
-        div {
-          width: 30%;
-        }
-      }
-      &.twoParts {
-        div {
-          width: 40%;
-        }
-      }
-    }
   }
 
   &::after {

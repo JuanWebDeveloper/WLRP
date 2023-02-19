@@ -82,16 +82,6 @@
       }
 
       @media (max-width: 990px) {
-        justify-content: space-evenly;
-        margin-bottom: $mrg-onehalf;
-        width: 70%;
-
-        .grid-item {
-          width: 20%;
-        }
-      }
-
-      @media (max-width: 768px) {
         display: none;
       }
     }
@@ -121,9 +111,7 @@
       }
 
       button {
-        background-color: $blue;
-        border-color: rgba($blue, 0.1);
-        cursor: pointer;
+        border-color: $blue;
         font-size: toRem(1.15);
         position: relative;
         padding: $pad-quarter 0;
@@ -132,10 +120,6 @@
 
         i {
           color: $white;
-        }
-
-        &:hover {
-          background-color: rgba($blue, 0.8);
         }
       }
 
