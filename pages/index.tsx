@@ -1,6 +1,7 @@
 // Import components of the page
 import { Header } from '@/views/components/Home/Header';
 import { ViewOptions } from '@/views/components/Home/ViewOptions';
+import { Card } from '@/views/components/shared/Card';
 import { useState } from 'react';
 
 const Home = () => {
@@ -12,11 +13,11 @@ const Home = () => {
         <Header />
         <ViewOptions grid={grid} setGrid={setGrid} />
 
-        <div className={`reset ${grid}`}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className={`cards ${grid}`}>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ export const ViewOptions = ({ grid, setGrid }: any) => {
             onFocus={() => searchScale(true)}
             onBlur={() => searchScale(false)}
           />
-          <button>
+          <button className='button-color'>
             <i className='fa-solid fa-magnifying-glass'></i>
           </button>
         </form>
