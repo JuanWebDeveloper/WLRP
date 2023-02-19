@@ -1,0 +1,136 @@
+.view-options {
+  margin-top: $mrg-triple;
+  position: relative;
+  width: 100vw;
+
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    position: relative;
+    width: 60%;
+
+    .grids {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      width: 40%;
+
+      .grid-item {
+        background-color: rgba($tertiary, 0.7);
+        box-shadow: $shadow-primary;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        height: 50px;
+        justify-content: space-evenly;
+        padding: $pad-quarter;
+        transition: $transition-bezier;
+        width: 25%;
+
+        div {
+          background-color: rgba($black, 0.5);
+          height: 100%;
+          transition: $transition-bezier;
+        }
+
+        &:first-child {
+          div {
+            width: 15%;
+          }
+        }
+
+        &:nth-child(2) {
+          div {
+            width: 25%;
+          }
+        }
+
+        &:last-child {
+          div {
+            width: 40%;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($tertiary, 0.7);
+          scale: 1.05;
+
+          div {
+            background-color: rgba($black, 0.7);
+          }
+        }
+
+        &.active {
+          background-color: rgba($tertiary, 0.9);
+          scale: 1.1;
+
+          div {
+            background-color: rgba($black, 0.9);
+          }
+
+          &:hover {
+            background-color: rgba($tertiary, 0.9);
+
+            div {
+              background-color: rgba($black, 0.9);
+            }
+          }
+        }
+      }
+    }
+
+    .search {
+      align-items: center;
+      box-shadow: $shadow-tertiary;
+      display: flex;
+      position: relative;
+      transition: $transition-bezier;
+      width: 35%;
+
+      input {
+        background-color: $tertiary;
+        border-radius: 5px;
+        border: none;
+        color: $black;
+        font-family: $family-title;
+        font-weight: 500;
+        font-size: toRem(1.15);
+        width: 85%;
+        padding: $pad-quarter;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        background-color: $blue;
+        border-color: rgba($blue, 0.1);
+        cursor: pointer;
+        font-size: toRem(1.15);
+        position: relative;
+        padding: $pad-quarter 0;
+        transition: $transition-bezier;
+        width: 15%;
+
+        i {
+          color: $white;
+        }
+
+        &:hover {
+          background-color: rgba($blue, 0.8);
+        }
+      }
+
+      &.scale {
+        scale: 1.05;
+      }
+
+      &:hover {
+        scale: 1.05;
+      }
+    }
+  }
+}

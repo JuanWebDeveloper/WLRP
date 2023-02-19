@@ -9,6 +9,10 @@
 // Import global styles
 @import './globals';
 
-// Import component styles
-@import './components/navbar';
-@import './components/home';
+// Import shared component styles
+@import './shared/navbar';
+
+// Import home page component styles
+@import './pages/home/home';
+@import './pages/home/header';
+@import './pages/home/view-options';

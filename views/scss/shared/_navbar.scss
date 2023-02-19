@@ -191,12 +191,24 @@
         a {
           color: $black;
         }
+
+        &:hover {
+          a {
+            color: $blue;
+          }
+        }
       }
 
       @media (max-width: 990px) {
         li {
           a {
             color: $white;
+          }
+
+          &:hover {
+            a {
+              color: $white;
+            }
           }
         }
       }
