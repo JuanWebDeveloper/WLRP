@@ -10,18 +10,18 @@ import { useState } from 'react';
 
 const Home = (props: Recipes[]) => {
   const [grid, setGrid] = useState('fourParts');
+  const { recipes }: Recipes | any = props;
 
   return (
     <div className='home'>
       <div className='content'>
         <Header />
         <ViewOptions grid={grid} setGrid={setGrid} />
-        {JSON.stringify(props)}
+
         <div className={`cards ${grid}`}>
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {recipes.map((recipe: Recipes | any) => (
+            <Card key={recipe.idRecipe} recipe={recipe} />
+          ))}
         </div>
       </div>
     </div>
@@ -33,18 +33,7 @@ export default Home;
 // API call to fetch recipes
 export const getStaticProps = async () => {
   // Select a random food from the foods array
-  const foods: string[] = [
-    'Chicken breast',
-    'Salmon',
-    'Tuna',
-    'Beef steak',
-    'Pork chops',
-    'Shrimp',
-    'Tofu',
-    'Lentils',
-    'Chickpeas',
-    'Quinoa',
-  ];
+  const foods: string[] = ['Chicken breast', 'Salmon', 'Beef steak', 'Pork chops'];
   const randomFood: string = foods[Math.floor(Math.random() * foods.length)];
 
   // Make a request to TheMealDB API to get recipes

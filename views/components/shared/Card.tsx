@@ -1,12 +1,16 @@
 import Image from 'next/image';
+// Interface of the necessary data for the recipes
+import { Recipes } from '@/core/models/Recipes';
 
-export const Card = () => {
+export const Card = (props: Recipes | any) => {
+  const { recipe }: Recipes | any = props;
+
   return (
     <div className='card'>
       <div className='content'>
-        <h3>Name of the dishs</h3>
+        <h3>{recipe.name}</h3>
         <div className='dish-image'>
-          <Image src={'/header.png'} alt={'Image of the dist'} width={'976'} height={'549'} />
+          <Image src={recipe.image} alt={recipe.name} width={'976'} height={'549'} />
         </div>
         <div className='card-footer'>
           <h3>Do you like it?</h3>

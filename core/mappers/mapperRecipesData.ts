@@ -4,6 +4,7 @@ import { Recipes } from '../models/Recipes';
 // This function maps a recipe data object to a new recipe object with selected properties
 export const mapRecipe = (recipeData: Object | any): Recipes => {
   return {
+    idRecipe: recipeData.idMeal,
     name: recipeData.strMeal,
     image: recipeData.strMealThumb,
     instructions: recipeData.strInstructions,
