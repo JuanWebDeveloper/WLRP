@@ -1,0 +1,70 @@
+.about-us {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+
+  .content {
+    background-color: rgba($tertiary, 0.9);
+    box-shadow: $shadow-secondary;
+    border-radius: 5px;
+    left: 50%;
+    margin-top: 45vh;
+    position: relative;
+    padding: $pad-base;
+    transform: translateX(-50%);
+    width: 70%;
+    z-index: 2;
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      font-size: toRem(1.35);
+      text-align: justify;
+    }
+  }
+
+  &::after {
+    background: url(../../../../public/image/about.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    content: '';
+    height: 65vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: rgba($black, 0.4);
+    content: '';
+    height: 65vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  @media (max-width: 990px) {
+    &::after {
+      background-size: contain;
+      height: 26vh;
+    }
+
+    &::before {
+      height: 26vh;
+    }
+
+    .content {
+      margin-top: 20vh;
+      width: 90vw;
+
+      p {
+        font-size: toRem(1.2);
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
   }
 
   &::after {
-    background: url(../../../../public/header.png);
+    background: url(../../../../public/image/header.png);
     background-size: cover;
     background-attachment: fixed;
     content: '';
@@ -21,7 +21,7 @@
   }
 
   &::before {
-    background-color: rgba($black, 0.9);
+    background-color: rgba($black, 0.85);
     content: '';
     height: 40vh;
     position: absolute;

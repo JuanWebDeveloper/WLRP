@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const Navbar = () => {
   const [onScroll, setOnScroll] = useState(false);
@@ -33,12 +34,14 @@ export const Navbar = () => {
   return (
     <div className='navbar'>
       <div className='logo'>
-        <Image
-          src={onScroll ? '/logo-dark.svg' : '/logo-white.svg'}
-          alt={'WLRP application logo'}
-          width={679}
-          height={195}
-        />
+        <Link href='/'>
+          <Image
+            src={onScroll ? '/image/logo-dark.svg' : '/image/logo-white.svg'}
+            alt={'WLRP application logo'}
+            width={679}
+            height={195}
+          />
+        </Link>
       </div>
 
       <div className='bars' onClick={toggleNavigation}>
@@ -49,7 +52,7 @@ export const Navbar = () => {
 
       <ul className='navigation'>
         <li>
-          <a>About</a>
+          <Link href='/about'>About</Link>
         </li>
         <li>
           <a>Gastronomy by country</a>
