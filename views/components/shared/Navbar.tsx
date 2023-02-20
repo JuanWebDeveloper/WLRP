@@ -55,16 +55,13 @@ export const Navbar = () => {
           <Link href='/about'>About</Link>
         </li>
         <li>
-          <a>Gastronomy by country</a>
+          <Link href='/'>Gastronomy by country</Link>
         </li>
         <li>
-          <a>FAQ&apos;S</a>
+          <Link href='/'>FAQ&apos;S</Link>
         </li>
         <li>
-          <a>Any problem? contact us</a>
-        </li>
-        <li>
-          <a>Sign in</a>
+          <Link href='/'>Any problem? contact us</Link>
         </li>
       </ul>
     </div>
