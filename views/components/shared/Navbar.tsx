@@ -20,13 +20,20 @@ export const Navbar = () => {
   }, []);
 
   const toggleNavigation = () => {
+    const navbar = document.querySelector('.navbar');
     const bars = document.querySelector('.bars');
     const navigation = document.querySelector('.navigation');
 
     if (navigation?.classList.contains('active')) {
+      if (window.scrollY < 40) {
+        navbar?.classList.remove('active');
+        setOnScroll(false);
+      }
       bars?.classList.remove('active');
       navigation?.classList.remove('active');
     } else {
+      navbar?.classList.add('active');
+      setOnScroll(true);
       bars?.classList.add('active');
       navigation?.classList.add('active');
     }
