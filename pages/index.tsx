@@ -12,18 +12,27 @@ const Home = (props: Recipes[]) => {
   const { recipes }: Recipes | any = props;
   const [grid, setGrid] = useState('fourParts');
   const [cardsContent, setCardsContent] = useState(recipes);
+  const [noRecipe, setNoRecipe] = useState('');
 
   return (
     <div className='home'>
       <div className='content'>
         <Header />
-        <ViewOptions grid={grid} setGrid={setGrid} setCardsContent={setCardsContent} />
+        <ViewOptions grid={grid} setGrid={setGrid} setCardsContent={setCardsContent} setNoRecipe={setNoRecipe} />
 
-        <div className={`cards ${grid}`}>
-          {cardsContent.map((recipe: Recipes | any) => (
-            <Card key={recipe.idRecipe} recipe={recipe} />
-          ))}
-        </div>
+        {cardsContent.length >= 1 ? (
+          <div className={`cards ${grid}`}>
+            {cardsContent.map((recipe: Recipes | any) => (
+              <Card key={recipe.idRecipe} recipe={recipe} />
+            ))}
+          </div>
+        ) : (
+          <div className='no-recipe'>
+            <h2>
+              <span>Sorry, no recipe {noRecipe}.</span>
+            </h2>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -7,6 +7,23 @@
   .content {
     position: relative;
     width: 100%;
+
+    .no-recipe {
+      @include scaleXY-in;
+      margin-top: $mrg-triple;
+      text-align: center;
+
+      h2 {
+        span {
+          background-color: $errors;
+          box-shadow: $shadow-secondary;
+          border-radius: 5px;
+          color: $white;
+          padding: $pad-quarter $pad-onehalf;
+          text-shadow: $shadow-tertiary-text;
+        }
+      }
+    }
   }
 
   &::after {
