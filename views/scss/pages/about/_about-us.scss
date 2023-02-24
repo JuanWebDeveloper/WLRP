@@ -1,6 +1,6 @@
 .about-us {
-  position: absolute;
-  top: 0;
+  position: relative;
+  padding-top: 45vh;
   width: 100vw;
 
   .content {
@@ -8,7 +8,6 @@
     box-shadow: $shadow-secondary;
     border-radius: 5px;
     left: 50%;
-    margin-top: 45vh;
     position: relative;
     padding: $pad-base;
     transform: translateX(-50%);
@@ -49,6 +48,8 @@
   }
 
   @media (max-width: 990px) {
+    padding-top: 23vh;
+
     &::after {
       background-size: contain;
       height: 26vh;
@@ -59,7 +60,6 @@
     }
 
     .content {
-      margin-top: 20vh;
       width: 90vw;
 
       p {
