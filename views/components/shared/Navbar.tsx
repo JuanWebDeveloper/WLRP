@@ -62,7 +62,7 @@ export const Navbar = () => {
           <Link href='/about'>About</Link>
         </li>
         <li>
-          <Link href='/'>Gastronomy by country</Link>
+          <Link href='/gastronomycountry/colombia'>Gastronomy by country</Link>
         </li>
         <li>
           <Link href='/'>FAQ&apos;S</Link>
