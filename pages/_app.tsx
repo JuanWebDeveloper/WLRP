@@ -1,21 +1,15 @@
-import { Fragment } from 'react';
 import type { AppProps } from 'next/app';
 
 // Styles of the project
 import '@/views/scss/styles.scss';
 
-// Shared components import
-import { Navbar } from '@/views/components/shared/Navbar';
-import { Footer } from '@/views/components/shared/Footer';
+// Imported custom layout component to use as a wrapper for consistent site structure and styling
+import { Layout } from '../views/components/Layout/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Fragment>
-      <Navbar />
-      <main className='main'>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
-    </Fragment>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }
