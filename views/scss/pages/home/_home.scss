@@ -21,7 +21,27 @@
           color: $white;
           padding: $pad-quarter $pad-onehalf;
           text-shadow: $shadow-tertiary-text;
+
+          @media (max-width: 620px) {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+          }
         }
+
+        @media (max-width: 620px) {
+          font-size: toRem(2.5);
+          background-color: $errors;
+          box-shadow: $shadow-tertiary;
+          border-radius: 5px;
+          color: $white;
+          padding: $pad-quarter $pad-onehalf;
+        }
+      }
+
+      @media (max-width: 620px) {
+        margin-top: $mrg-double;
+        padding: 0 $pad-half;
       }
     }
   }
