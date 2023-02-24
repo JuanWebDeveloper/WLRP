@@ -1,7 +1,7 @@
 import { useForm } from '@/core/hooks/useForm';
 import { Recipes } from '../../../core/models/Recipes';
 
-export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe }: any) => {
+export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLoading }: any) => {
   // Updates the grid state with the new gridText value to change the display of the recipe cards
   const onChangeGrid = (gridText: string) => {
     setGrid(gridText);
@@ -29,14 +29,23 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe }: any
   // This function fetches search results from the backend API and updates the card content with the response
   const handleTheSearch = async (e: any) => {
     e.preventDefault();
+    setLoading(true);
 
     await fetch(`/api/search?q=${search}`)
       .then((res: Response) => res.json())
-      .then((response: Recipes[]) => setCardsContent(response))
+      .then((response: Recipes[]) => {
+        setCardsContent(response);
+        setLoading(false);
+      })
+
       .catch((e) => {
         console.error(e);
         setCardsContent([]);
-        setNoRecipe(search);
+        setNoRecipe({
+          search,
+          noRecipe: true,
+        });
+        setLoading(false);
       });
   };
 
