@@ -35,16 +35,14 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
       .then((res: Response) => res.json())
       .then((response: Recipes[]) => {
         setCardsContent(response);
+        setNoRecipe({ search: '', noRecipe: false });
         setLoading(false);
       })
 
       .catch((e) => {
         console.error(e);
         setCardsContent([]);
-        setNoRecipe({
-          search,
-          noRecipe: true,
-        });
+        setNoRecipe({ search, noRecipe: true });
         setLoading(false);
       });
   };

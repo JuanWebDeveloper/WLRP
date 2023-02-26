@@ -8,6 +8,7 @@ import { Header } from '@/views/components/Home/Header';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
 import { Loading } from '@/views/components/shared/Loading';
+import { NoRecipe } from '../views/components/shared/NoRecipe';
 
 const Home = (props: Recipes[]) => {
   const { recipes }: Recipes | any = props;
@@ -35,13 +36,7 @@ const Home = (props: Recipes[]) => {
             ))}
           </div>
         )}
-        {noRecipe.noRecipe && !loading && (
-          <div className='no-recipe'>
-            <h2>
-              <span>Sorry, no recipe {noRecipe.search}.</span>
-            </h2>
-          </div>
-        )}
+        {noRecipe.noRecipe && !loading && <NoRecipe message={`Sorry, no recipe ${noRecipe.search}.`} />}
         {loading && <Loading />}
       </div>
     </div>

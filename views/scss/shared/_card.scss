@@ -1,6 +1,7 @@
 .card {
+  @include scaleXY-in;
   background-color: $tertiary;
-  box-shadow: $shadow-primary;
+  box-shadow: $shadow-tertiary;
   border-radius: 5px;
   margin-bottom: $mrg-double;
   position: relative;
@@ -18,12 +19,13 @@
     }
 
     .dish-image {
-      box-shadow: $shadow-primary;
       margin: $mrg-onehalf auto;
       position: relative;
       transition: $transition-bezier;
 
       img {
+        border-radius: 5px;
+        box-shadow: $shadow-tertiary;
         height: 100%;
         width: 100%;
       }
