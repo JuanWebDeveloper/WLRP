@@ -1,6 +1,6 @@
-export const Loading = () => {
+export const Loading = ({ style }: any) => {
   return (
-    <div className='loading'>
+    <div style={style} className='loading'>
       <div className='loading-circle'></div>
     </div>
   );
