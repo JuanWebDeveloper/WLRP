@@ -1,7 +1,7 @@
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
 // Import of mapRecipe function used to map recipe data
-import { mapRecipe } from '@/core/mappers/mapperRecipesData';
+import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
 // Import components of the page
 import { Header } from '@/views/components/Home/Header';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
@@ -63,7 +63,7 @@ export const getStaticProps = async () => {
     .json()
     .then((response) => response.meals)
     .catch((e) => console.log(e));
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipe(recipe));
+  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeByCountry(recipe));
 
   return {
     props: {

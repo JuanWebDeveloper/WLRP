@@ -55,3 +55,11 @@ export const mapRecipe = (recipeData: Object | any): Recipes => {
     countryOrigin: recipeData.strArea,
   };
 };
+
+export const mapRecipeByCountry = (recipeData: Object | any): Recipes => {
+  return {
+    idRecipe: recipeData.idMeal,
+    name: recipeData.strMeal,
+    image: recipeData.strMealThumb,
+  };
+};
