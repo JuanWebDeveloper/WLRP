@@ -9,14 +9,6 @@ export const countries = [
     image: 'https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png',
   },
   {
-    name: 'Argentinian',
-    image: 'https://cdn.countryflags.com/thumbs/argentina/flag-400.png',
-  },
-  {
-    name: 'Brazilian',
-    image: 'https://cdn.countryflags.com/thumbs/brazil/flag-400.png',
-  },
-  {
     name: 'British',
     image: 'https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png',
   },
@@ -29,20 +21,12 @@ export const countries = [
     image: 'https://cdn.countryflags.com/thumbs/china/flag-400.png',
   },
   {
-    name: 'Colombian',
-    image: 'https://cdn.countryflags.com/thumbs/colombia/flag-400.png',
-  },
-  {
     name: 'Dutch',
     image: 'https://cdn.countryflags.com/thumbs/netherlands/flag-400.png',
   },
   {
     name: 'Egyptian',
     image: 'https://cdn.countryflags.com/thumbs/egypt/flag-400.png',
-  },
-  {
-    name: 'French',
-    image: 'https://cdn.countryflags.com/thumbs/france/flag-400.png',
   },
   {
     name: 'Greek',
@@ -83,10 +67,6 @@ export const countries = [
   {
     name: 'Moroccan',
     image: 'https://cdn.countryflags.com/thumbs/morocco/flag-400.png',
-  },
-  {
-    name: 'Russian',
-    image: 'https://cdn.countryflags.com/thumbs/russia/flag-400.png',
   },
   {
     name: 'Spanish',
