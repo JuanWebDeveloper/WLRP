@@ -5,30 +5,8 @@
   width: 100vw;
 
   .content {
-    background-color: rgba($tertiary, 0.9);
-    box-shadow: $shadow-secondary;
-    border-radius: 5px;
-    left: 50%;
     position: relative;
-    padding: $pad-base;
-    transform: translateX(-50%);
-    width: 95vw;
-    z-index: 2;
-
-    h2 {
-      text-align: center;
-    }
-
-    .filter-countries {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-
-      div {
-        margin: $mrg-quarter $mrg-half;
-      }
-    }
+    width: 100%;
   }
 
   &::after {
