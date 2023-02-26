@@ -1,10 +1,15 @@
 import { useState } from 'react';
+// Interface
 import { Recipes } from '@/core/models/Recipes';
+// Mapper
 import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
+// Components of the page
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
+import { ViewOptions } from '@/views/components/shared/ViewOptions';
+import { Card } from '../views/components/shared/Card';
 
 const GastronomyByCountry = (props: any) => {
-  const { country, recipes }: any = props;
+  const { recipes }: any = props;
   const [grid, setGrid] = useState('fourParts');
   const [cardsContent, setCardsContent] = useState(recipes);
   const [noRecipe, setNoRecipe] = useState({ search: '', noRecipe: false });
@@ -14,6 +19,21 @@ const GastronomyByCountry = (props: any) => {
     <div className='gastronomy-country'>
       <div className='content'>
         <CountriesFilter />
+        <ViewOptions
+          grid={grid}
+          setGrid={setGrid}
+          setCardsContent={setCardsContent}
+          setNoRecipe={setNoRecipe}
+          setLoading={setLoading}
+        />
+
+        {cardsContent.length >= 1 && !loading && (
+          <div className={`cards ${grid}`}>
+            {cardsContent.map((recipe: Recipes | any) => (
+              <Card key={recipe.idRecipe} recipe={recipe} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
