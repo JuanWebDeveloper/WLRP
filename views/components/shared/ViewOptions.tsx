@@ -1,5 +1,5 @@
 import { useForm } from '@/core/hooks/useForm';
-import { Recipes } from '../../../core/models/Recipes';
+import { Recipes } from '@/core/models/Recipes';
 
 export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLoading }: any) => {
   // Updates the grid state with the new gridText value to change the display of the recipe cards

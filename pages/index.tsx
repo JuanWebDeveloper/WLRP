@@ -1,10 +1,10 @@
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
 // Import of mapRecipe function used to map recipe data
-import { mapRecipe } from '../core/mappers/mapperRecipesData';
+import { mapRecipe } from '@/core/mappers/mapperRecipesData';
 // Import components of the page
 import { Header } from '@/views/components/Home/Header';
-import { ViewOptions } from '@/views/components/Home/ViewOptions';
+import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
 import { useState } from 'react';
 import { Loading } from '@/views/components/shared/Loading';
