@@ -8,7 +8,7 @@ export const Card = (props: Recipes | any) => {
   return (
     <div className='card'>
       <div className='content'>
-        <h3>{recipe.name}</h3>
+        <h3>{recipe.name.slice(0, 16) + (recipe.name.length > 16 ? '...' : '').replace(/\s*\(.*?\)\s*/g, '')}</h3>
         <div className='dish-image'>
           <Image src={recipe.image} alt={recipe.name} width={'976'} height={'549'} />
         </div>
