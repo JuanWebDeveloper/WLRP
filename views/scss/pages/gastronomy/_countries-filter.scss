@@ -21,6 +21,29 @@
 
     div {
       margin: $mrg-quarter $mrg-half;
+
+      img {
+        box-shadow: $shadow-primary;
+        border-radius: 5px;
+        border: 2px solid rgba($black, 0.6);
+        transition: $transition-bezier;
+
+        &:hover {
+          box-shadow: $shadow-secondary;
+          opacity: 0.8;
+          scale: 1.05;
+        }
+      }
+
+      @media (max-width: 510px) {
+        height: 60px;
+        width: 80px;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
     }
   }
 }

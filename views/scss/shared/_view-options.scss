@@ -1,16 +1,16 @@
 .view-options {
   margin-top: $mrg-triple;
   position: relative;
-  width: 100%;
+  width: 100vw;
 
-  .content {
+  .content-options {
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto;
     position: relative;
-    width: 60%;
+    width: 60vw;
 
     .grids {
       display: flex;
@@ -140,6 +140,10 @@
           font-size: toRem(1);
         }
       }
+    }
+
+    @media (max-width: 550px) {
+      width: 80%;
     }
   }
 }

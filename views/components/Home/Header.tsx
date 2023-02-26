@@ -3,10 +3,10 @@ export const Header = () => {
     <div className='text'>
       <h1>WLRP: World Recipes</h1>
       <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi accusantium iusto explicabo, repellendus
-        quos nulla nemo facere aspernatur dignissimos earum doloremque ab accusamus reprehenderit alias necessitatibus,
-        enim eum! Blanditiis quos ab enim quas nemo omnis ratione illum aspernatur quod, ea quidem beatae sapiente,
-        asperiores accusamus temporibus optio quibusdam in! Perferendis.
+        Welcome to <span>WLRP: World Recipes</span>! We offer a variety of easy-to-access recipes from around the world.
+        Our goal is to connect people through food by sharing the best recipes and presenting them in an easy and
+        accessible way. Explore our website to discover new cuisines and flavors, and improve your culinary skills with
+        our detailed information about ingredients and techniques. Thank you for visiting us!
       </p>
     </div>
   );

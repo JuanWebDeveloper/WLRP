@@ -31,7 +31,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className='copy'>
-        <p>Todos los derechos reservados © 2023</p>
+        <span>Todos los derechos reservados © 2023</span>
       </div>
     </footer>
   );

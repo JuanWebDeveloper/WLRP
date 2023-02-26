@@ -51,7 +51,7 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
 
   return (
     <div className='view-options' onSubmit={handleTheSearch}>
-      <div className='content'>
+      <div className='content-options'>
         <div className='grids'>
           <div className={`grid-item ${grid === 'fourParts' && 'active'}`} onClick={() => onChangeGrid('fourParts')}>
             <div></div>
