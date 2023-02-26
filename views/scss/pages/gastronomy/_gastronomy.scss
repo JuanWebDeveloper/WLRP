@@ -1,0 +1,55 @@
+.gastronomy-country {
+  position: relative;
+  padding-top: 35vh;
+  top: 0;
+  width: 100vw;
+
+  .content {
+    background-color: rgba($tertiary, 0.9);
+    box-shadow: $shadow-secondary;
+    border-radius: 5px;
+    left: 50%;
+    position: relative;
+    padding: $pad-base;
+    transform: translateX(-50%);
+    width: 95vw;
+    z-index: 2;
+
+    h2 {
+      text-align: center;
+    }
+
+    .filter-countries {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+
+      div {
+        margin: $mrg-quarter $mrg-half;
+      }
+    }
+  }
+
+  &::after {
+    background: url(../../../../public/image/header.png);
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: rgba($black, 0.85);
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}

@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['www.themealdb.com'],
-    domains: ['cdn.countryflags.com'],
+    domains: ['www.themealdb.com', 'cdn.countryflags.com'],
   },
   async rewrites() {
     return [

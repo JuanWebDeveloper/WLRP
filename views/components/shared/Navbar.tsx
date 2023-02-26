@@ -1,19 +1,16 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import countries from '@/core/utils/countries';
 
 export const Navbar = () => {
   const [onScroll, setOnScroll] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const navbar = document.querySelector('.navbar');
-
       if (window.scrollY >= 40) {
-        navbar?.classList.add('active');
         setOnScroll(true);
       } else {
-        navbar?.classList.remove('active');
         setOnScroll(false);
       }
     });
@@ -39,7 +36,7 @@ export const Navbar = () => {
     }
   };
   return (
-    <div className='navbar'>
+    <div className={`navbar ${onScroll && 'active'}`}>
       <div className='logo'>
         <Link href='/'>
           <Image
@@ -62,7 +59,9 @@ export const Navbar = () => {
           <Link href='/about'>About</Link>
         </li>
         <li>
-          <Link href='/gastronomycountry/colombia'>Gastronomy by country</Link>
+          <Link href={`/gastronomy?country=${countries[Math.floor(Math.random() * countries.length)].name}`}>
+            Gastronomy by country
+          </Link>
         </li>
         <li>
           <Link href='/'>FAQ&apos;S</Link>

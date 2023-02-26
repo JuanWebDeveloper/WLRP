@@ -6,6 +6,7 @@ const GastronomyByCountry = () => {
   return (
     <div className='gastronomy-country'>
       <div className='content'>
+        <h2>Choose Country To Filter The Recipes</h2>
         <div className='filter-countries'>
           {countries.map((country: any) => (
             <div key={country.name}>
