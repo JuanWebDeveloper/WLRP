@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Recipes } from '@/core/models/Recipes';
 // Mapper
 import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
+// Utils
+import { initialGrid } from '../core/utils/initialGrid';
 // Components of the page
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
@@ -10,9 +12,8 @@ import { Card } from '../views/components/shared/Card';
 
 const GastronomyByCountry = (props: any) => {
   const { recipes }: any = props;
-  const [grid, setGrid] = useState('fourParts');
+  const [grid, setGrid] = useState(initialGrid(recipes.length));
   const [cardsContent, setCardsContent] = useState(recipes);
-  const [noRecipe, setNoRecipe] = useState({ search: '', noRecipe: false });
   const [loading, setLoading] = useState(false);
 
   return (
@@ -23,8 +24,9 @@ const GastronomyByCountry = (props: any) => {
           grid={grid}
           setGrid={setGrid}
           setCardsContent={setCardsContent}
-          setNoRecipe={setNoRecipe}
           setLoading={setLoading}
+          recipeQuantity={recipes.length}
+          style={{ display: 'none' }}
         />
 
         {cardsContent.length >= 1 && !loading && (

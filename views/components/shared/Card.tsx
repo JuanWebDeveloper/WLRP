@@ -14,7 +14,7 @@ export const Card = (props: Recipes | any) => {
         </div>
         <div className='card-footer'>
           <h3>Do you like it?</h3>
-          <button className='button-color'>Learn How To Do It</button>
+          <button className='button-default'>Learn How To Do It</button>
         </div>
       </div>
     </div>

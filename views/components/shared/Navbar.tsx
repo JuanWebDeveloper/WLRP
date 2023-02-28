@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import countries from '@/core/utils/countries';
+import { countries } from '@/core/utils/countries';
 
 export const Navbar = () => {
   const [onScroll, setOnScroll] = useState(false);

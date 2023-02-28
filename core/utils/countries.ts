@@ -3,7 +3,7 @@ interface Country {
   image: string;
 }
 
-export const countries = [
+export const countries: Country[] = [
   {
     name: 'American',
     image: 'https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png',
@@ -89,5 +89,3 @@ export const countries = [
     image: 'https://cdn.countryflags.com/thumbs/vietnam/flag-400.png',
   },
 ];
-
-export default countries;

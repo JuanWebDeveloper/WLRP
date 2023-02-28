@@ -67,7 +67,55 @@ P {
           }
         }
       }
+    }
+  }
 
+  &.threeParts {
+    .card {
+      width: 30%;
+
+      .content {
+        .dish-image {
+          width: 70%;
+        }
+      }
+
+      @media (max-width: 1368px) {
+        .content {
+          h3 {
+            font-size: toRem(2.3);
+            line-height: toRem(2.5);
+          }
+        }
+      }
+
+      @media (max-width: 1200px) {
+        .content {
+          h3 {
+            font-size: toRem(1.9);
+            line-height: toRem(2.1);
+          }
+        }
+      }
+    }
+  }
+
+  &.twoParts {
+    .card {
+      width: 40%;
+
+      .content {
+        .dish-image {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  &.fourParts,
+  &.threeParts,
+  &.twoParts {
+    .card {
       @media (max-width: 990px) {
         width: 70%;
 
@@ -120,51 +168,9 @@ P {
       }
     }
   }
-
-  &.threeParts {
-    .card {
-      width: 30%;
-
-      .content {
-        .dish-image {
-          width: 70%;
-        }
-      }
-
-      @media (max-width: 1368px) {
-        .content {
-          h3 {
-            font-size: toRem(2.3);
-            line-height: toRem(2.5);
-          }
-        }
-      }
-
-      @media (max-width: 1200px) {
-        .content {
-          h3 {
-            font-size: toRem(1.9);
-            line-height: toRem(2.1);
-          }
-        }
-      }
-    }
-  }
-
-  &.twoParts {
-    .card {
-      width: 40%;
-
-      .content {
-        .dish-image {
-          width: 50%;
-        }
-      }
-    }
-  }
 }
 
-.button-color {
+.button-default {
   background: $blue;
   background: -webkit-linear-gradient(to top, $blue-1, $blue-2, $blue);
   background: linear-gradient(to top, $blue-1, $blue-2, $blue);

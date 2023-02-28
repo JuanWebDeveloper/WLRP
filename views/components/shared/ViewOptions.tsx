@@ -1,7 +1,14 @@
-import { useForm } from '@/core/hooks/useForm';
+import { useState } from 'react';
+// Interface
 import { Recipes } from '@/core/models/Recipes';
+// Hook
+import { useForm } from '@/core/hooks/useForm';
+// Utils
+import { initialGrid } from '@/core/utils/initialGrid';
 
-export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLoading }: any) => {
+export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLoading, recipeQuantity, style }: any) => {
+  const [quantity, setQuantity] = useState(recipeQuantity);
+
   // Updates the grid state with the new gridText value to change the display of the recipe cards
   const onChangeGrid = (gridText: string) => {
     setGrid(gridText);
@@ -35,13 +42,15 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
       .then((res: Response) => res.json())
       .then((response: Recipes[]) => {
         setCardsContent(response);
+        setQuantity(response.length);
+        setGrid(initialGrid(response.length));
         setNoRecipe({ search: '', noRecipe: false });
         setLoading(false);
       })
-
       .catch((e) => {
         console.error(e);
         setCardsContent([]);
+        setQuantity(0);
         setNoRecipe({ search, noRecipe: true });
         setLoading(false);
       });
@@ -50,25 +59,31 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
   return (
     <div className='view-options' onSubmit={handleTheSearch}>
       <div className='content-options'>
-        <div className='grids'>
-          <div className={`grid-item ${grid === 'fourParts' && 'active'}`} onClick={() => onChangeGrid('fourParts')}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div className={`grid-item ${grid === 'threeParts' && 'active'}`} onClick={() => onChangeGrid('threeParts')}>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-          <div className={`grid-item ${grid === 'twoParts' && 'active'}`} onClick={() => onChangeGrid('twoParts')}>
-            <div></div>
-            <div></div>
-          </div>
+        <div className={`grids ${quantity <= 1 && 'none'}`}>
+          {quantity >= 4 && (
+            <div className={`grid-item ${grid === 'fourParts' && 'active'}`} onClick={() => onChangeGrid('fourParts')}>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          )}
+          {quantity >= 3 && (
+            <div className={`grid-item ${grid === 'threeParts' && 'active'}`} onClick={() => onChangeGrid('threeParts')}>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          )}
+          {quantity >= 2 && (
+            <div className={`grid-item ${grid === 'twoParts' && 'active'}`} onClick={() => onChangeGrid('twoParts')}>
+              <div></div>
+              <div></div>
+            </div>
+          )}
         </div>
 
-        <form className='search'>
+        <form style={style} className='search'>
           <input
             type='text'
             placeholder='Search recipes (English only)'
@@ -78,7 +93,7 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
             value={search}
             onChange={handleInputChange}
           />
-          <button className='button-color'>
+          <button className={`button-default ${search.length < 1 && 'none'}`}>
             <i className='fa-solid fa-magnifying-glass'></i>
           </button>
         </form>
