@@ -14,10 +14,6 @@ $family-text: 'Montserrat', 'Noto Sans', sans-serif;
   line-height: toRem(3.4);
   margin: $mrg-base 0;
 
-  span {
-    color: $black;
-  }
-
   @media (max-width: 510px) {
     font-size: toRem(2.1);
     line-height: toRem(2.5);
@@ -31,10 +27,6 @@ $family-text: 'Montserrat', 'Noto Sans', sans-serif;
   font-weight: 600;
   line-height: toRem(2.7);
   margin: $mrg-half 0;
-
-  span {
-    color: $black;
-  }
 }
 
 @mixin text {

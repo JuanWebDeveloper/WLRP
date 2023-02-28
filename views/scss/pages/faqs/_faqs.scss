@@ -1,0 +1,126 @@
+.faqs {
+  position: relative;
+  width: 100%;
+  padding-top: 35vh;
+
+  h2 {
+    position: relative;
+    text-align: center;
+    z-index: 5;
+
+    span {
+      background-color: rgba($tertiary, 0.9);
+      box-shadow: $shadow-secondary;
+      border-radius: 5px;
+      padding: $pad-quarter $pad-base;
+    }
+  }
+
+  .content {
+    margin: 0 auto;
+    margin-top: $mrg-triple;
+    position: relative;
+    width: 80%;
+
+    .faq {
+      margin: $mrg-half 0;
+      position: relative;
+      width: 100%;
+
+      .question {
+        align-items: center;
+        background: $blue;
+        background: -webkit-linear-gradient(to top, $blue-1, $blue-2, $blue);
+        background: linear-gradient(to top, $blue-1, $blue-2, $blue);
+        border-radius: 5px;
+        color: $white;
+        cursor: pointer;
+        display: flex;
+        font-family: $family-title;
+        font-size: toRem(1.6);
+        font-weight: 500;
+        justify-content: space-between;
+        position: relative;
+        transition: $transition-bezier;
+        padding: $pad-base;
+
+        i {
+          pointer-events: none;
+          transition: $transition-bezier;
+
+          @media (max-width: 600px) {
+            margin-left: $mrg-half;
+          }
+        }
+
+        &.active {
+          i {
+            transform: rotate(45deg);
+          }
+        }
+
+        &.active,
+        &:hover {
+          background: -webkit-linear-gradient(to bottom, $blue-1, $blue-2, $blue);
+          background: linear-gradient(to bottom, $blue-1, $blue-2, $blue);
+        }
+
+        @media (max-width: 600px) {
+          font-size: toRem(1.3);
+        }
+      }
+
+      .answer {
+        @include scaleXY-in;
+        background-color: rgba($tertiary, 0.5);
+        backdrop-filter: brightness(70%);
+        color: $black;
+        display: none;
+        position: relative;
+        padding: $pad-half;
+        width: 100%;
+        font-family: $family-text;
+        font-size: toRem(1.3);
+        font-weight: 500;
+
+        &.active {
+          display: block;
+        }
+
+        &::-webkit-scrollbar {
+          width: 0;
+        }
+
+        @media (max-width: 600px) {
+          font-size: toRem(1.1);
+        }
+      }
+    }
+
+    @media (max-width: 990px) {
+      width: 95%;
+    }
+  }
+
+  &::after {
+    background: url(../../../../public/image/header.png);
+    background-size: cover;
+    background-attachment: fixed;
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &::before {
+    background-color: rgba($black, 0.85);
+    content: '';
+    height: 40vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
