@@ -4,11 +4,11 @@ import { Recipes } from '@/core/models/Recipes';
 // Mapper
 import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
 // Utils
-import { initialGrid } from '../core/utils/initialGrid';
+import { initialGrid } from '@/core/utils/initialGrid';
 // Components of the page
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
-import { Card } from '../views/components/shared/Card';
+import { Card } from '@/views/components/shared/Card';
 
 const GastronomyByCountry = (props: any) => {
   const { recipes }: any = props;

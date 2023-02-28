@@ -4,13 +4,13 @@ import { Recipes } from '@/core/models/Recipes';
 // Import of mapRecipeByCountry function used to map recipe data
 import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
 // Utils
-import { initialGrid } from '../core/utils/initialGrid';
+import { initialGrid } from '@/core/utils/initialGrid';
 // Import components of the page
 import { Header } from '@/views/components/Home/Header';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
 import { Loading } from '@/views/components/shared/Loading';
-import { NoRecipe } from '../views/components/shared/NoRecipe';
+import { NoRecipe } from '@/views/components/shared/NoRecipe';
 
 const Home = (props: Recipes[]) => {
   const { recipes }: Recipes | any = props;

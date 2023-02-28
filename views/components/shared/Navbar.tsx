@@ -67,7 +67,7 @@ export const Navbar = () => {
           <Link href='/faqs'>FAQ&apos;S</Link>
         </li>
         <li>
-          <Link href='/'>Any problem? contact us</Link>
+          <Link href='/contact'>Any problem? contact us</Link>
         </li>
       </ul>
     </div>
