@@ -55,7 +55,7 @@
 
         &.active {
           i {
-            transform: rotate(45deg);
+            transform: rotate(225deg);
           }
         }
 
@@ -71,20 +71,23 @@
       }
 
       .answer {
-        @include scaleXY-in;
+        @include scaleXY-out;
         background-color: rgba($tertiary, 0.5);
         backdrop-filter: brightness(70%);
         color: $black;
-        display: none;
-        position: relative;
-        padding: $pad-half;
-        width: 100%;
         font-family: $family-text;
         font-size: toRem(1.3);
         font-weight: 500;
+        max-height: 0;
+        overflow: hidden;
+        position: relative;
+        transition: $transition-bezier;
+        width: 100%;
 
         &.active {
-          display: block;
+          @include scaleXY-in;
+          max-height: 1000px;
+          padding: $pad-base;
         }
 
         &::-webkit-scrollbar {

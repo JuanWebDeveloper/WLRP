@@ -71,6 +71,20 @@ $transition-bezier-secondary: all 0.6s cubic-bezier(0.17, 0.67, 0.8, 0.62);
   }
 }
 
+@mixin scaleXY-out {
+  animation: scaleXY-out 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes scaleXY-out {
+  0% {
+    transform: scaleX(1) scaleY(1);
+  }
+
+  100% {
+    transform: scaleX(0) scaleY(0);
+  }
+}
+
 @mixin loading-circle {
   animation: loading-circle 1.5s cubic-bezier(0.39, 0.575, 0.565, 1) infinite;
 }
