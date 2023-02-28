@@ -10,8 +10,8 @@
   }
 
   &::after {
-    background: url(../../../../public/image/header.png);
-    background-size: cover;
+    background: url(../../../../public/image/gastronomy.png);
+    background-size: contain;
     background-attachment: fixed;
     content: '';
     height: 40vh;
