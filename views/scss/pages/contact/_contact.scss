@@ -1,0 +1,169 @@
+.contact-us {
+  background-color: darken($tertiary, 15);
+  display: grid;
+  min-height: 100vh;
+  position: relative;
+  place-items: center;
+  padding-top: 2.2rem;
+  width: 100vw;
+
+  .content {
+    align-items: center;
+    background-color: darken($tertiary, 5);
+    border-radius: 5px;
+    box-shadow: $shadow-secondary;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    padding: $pad-half;
+    width: 90%;
+
+    .contact-text {
+      position: relative;
+      width: 40%;
+
+      h2,
+      h3 {
+        text-align: center;
+      }
+
+      h2 {
+        span {
+          display: block;
+          background-color: darken($tertiary, 15);
+
+          box-shadow: inset -2px -2px 5px rgba($black, 0.5), inset 2px 2px 5px rgba($black, 0.5);
+          border-radius: 5px;
+          position: relative;
+          padding: 0.25rem;
+          transform: skew(-15deg);
+          transition: $transition-bezier;
+
+          &:hover {
+            transform: skew(5deg);
+          }
+        }
+      }
+
+      h3 {
+        text-shadow: $shadow-secondary-text;
+      }
+
+      @media (max-width: 990px) {
+        width: 80%;
+      }
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+    }
+
+    .contact-form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      width: 40%;
+
+      .form-item_container {
+        position: relative;
+        margin-bottom: $mrg-double;
+        width: calc(50% - $mrg-quarter);
+
+        input,
+        textarea {
+          background-color: darken($tertiary, 15);
+          box-shadow: inset -2px -2px 5px rgba($black, 0.5), inset 2px 2px 5px rgba($black, 0.5);
+          border: none;
+          border-radius: 5px;
+          color: $black;
+          font-size: toRem(1.2);
+          font-family: $family-text;
+          font-weight: 500;
+          outline: none;
+          padding: $pad-quarter;
+          width: 100%;
+
+          &:focus + label,
+          &:not(:placeholder-shown) + label {
+            color: $blue;
+            font-weight: 600;
+            transform: translateY(-25px) scale(0.95);
+            transform-origin: top left;
+          }
+
+          @media (max-width: 990px) {
+            padding: $pad-half;
+          }
+        }
+
+        label {
+          color: $black;
+          cursor: pointer;
+          font-size: toRem(1.2);
+          font-family: $family-title;
+          font-weight: 500;
+          left: 5px;
+          position: absolute;
+          top: 0;
+          transform: translateY(5px);
+          transition: $transition-bezier;
+
+          @media (max-width: 990px) {
+            transform: translateY(10px);
+          }
+        }
+
+        &:nth-child(5) {
+          margin-bottom: $mrg-half;
+          width: 100%;
+
+          textarea {
+            min-height: 150px;
+            max-height: 200px;
+            min-width: 100%;
+            max-width: 100%;
+          }
+        }
+
+        @media (max-width: 550px) {
+          width: 100%;
+        }
+      }
+
+      button {
+        box-shadow: $shadow-tertiary;
+        border: none;
+        border-radius: 5px;
+        color: $white;
+        font-family: $family-title;
+        font-weight: 500;
+        font-size: toRem(1.35);
+        letter-spacing: 1px;
+        margin-left: auto;
+        padding: $pad-quarter $pad-onehalf;
+        transition: $transition-bezier;
+
+        &:hover {
+          box-shadow: $shadow-secondary;
+          letter-spacing: 2px;
+          scale: 1.04;
+        }
+      }
+
+      @media (max-width: 990px) {
+        margin-top: $mrg-triple;
+        width: 80%;
+      }
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding: 5.5rem 0;
+  }
+}
