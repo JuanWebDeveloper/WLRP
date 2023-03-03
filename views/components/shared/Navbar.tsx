@@ -5,8 +5,11 @@ import { countries } from '@/core/utils/countries';
 
 export const Navbar = () => {
   const [onScroll, setOnScroll] = useState(false);
+  const [countrie, setCountrie] = useState('');
 
   useEffect(() => {
+    setCountrie(countries[Math.floor(Math.random() * countries.length)].name);
+
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 40) {
         setOnScroll(true);
@@ -59,9 +62,7 @@ export const Navbar = () => {
           <Link href='/about'>About</Link>
         </li>
         <li>
-          <Link href={`/gastronomy?country=${countries[Math.floor(Math.random() * countries.length)].name}`}>
-            Gastronomy by country
-          </Link>
+          <Link href={`/gastronomy?country=${countrie}`}>Gastronomy by country</Link>
         </li>
         <li>
           <Link href='/faqs'>FAQ&apos;S</Link>
