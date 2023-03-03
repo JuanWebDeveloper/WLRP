@@ -20,6 +20,7 @@
     width: 100%;
 
     div {
+      @include scaleXY-in;
       margin: $mrg-quarter $mrg-half;
 
       img {

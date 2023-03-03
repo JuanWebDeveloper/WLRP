@@ -30,11 +30,10 @@
 
       h2 {
         span {
-          display: block;
           background-color: darken($tertiary, 15);
-
           box-shadow: inset -2px -2px 5px rgba($black, 0.5), inset 2px 2px 5px rgba($black, 0.5);
           border-radius: 5px;
+          display: block;
           position: relative;
           padding: 0.25rem;
           transform: skew(-15deg);
@@ -67,8 +66,8 @@
       width: 40%;
 
       .form-item_container {
-        position: relative;
         margin-bottom: $mrg-double;
+        position: relative;
         width: calc(50% - $mrg-quarter);
 
         input,
