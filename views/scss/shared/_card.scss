@@ -1,6 +1,6 @@
 .card {
   @include scaleXY-in;
-  background-color: $tertiary;
+  background-color: darken($tertiary, 5);
   box-shadow: $shadow-tertiary;
   border-radius: 5px;
   margin-bottom: $mrg-double;
@@ -47,8 +47,8 @@
         transition: $transition-bezier;
 
         &:hover {
-          scale: 1.04;
           box-shadow: $shadow-secondary;
+          scale: 1.04;
         }
       }
     }
