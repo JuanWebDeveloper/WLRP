@@ -4,6 +4,7 @@ export interface Recipes {
   image: string;
   instructions?: string;
   ingredients?: Array<string>;
+  ingredientsImages?: Array<string>;
   measures?: Array<string>;
   countryOrigin?: string;
 }

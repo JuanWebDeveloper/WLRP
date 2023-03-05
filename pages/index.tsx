@@ -1,8 +1,8 @@
 import { useState } from 'react';
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
-// Import of mapRecipeByCountry function used to map recipe data
-import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
+// Import of mapRecipeForCards function used to map recipe data
+import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { initialGrid } from '@/core/utils/initialGrid';
 // Import components of the page
@@ -62,7 +62,7 @@ export const getStaticProps = async () => {
     .then((response) => response.meals)
     .catch((e) => console.log(e));
 
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeByCountry(recipe));
+  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeForCards(recipe));
 
   return {
     props: {

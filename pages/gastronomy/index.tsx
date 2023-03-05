@@ -2,7 +2,7 @@ import { useState } from 'react';
 // Interface
 import { Recipes } from '@/core/models/Recipes';
 // Mapper
-import { mapRecipeByCountry } from '@/core/mappers/mapperRecipesData';
+import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { initialGrid } from '@/core/utils/initialGrid';
 // Components of the page
@@ -53,7 +53,7 @@ export async function getServerSideProps(context: any) {
     .then((response) => response.meals)
     .catch((e) => console.log(e));
 
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeByCountry(recipe));
+  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeForCards(recipe));
 
   return {
     props: { country, recipes },
