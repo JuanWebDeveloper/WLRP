@@ -32,9 +32,14 @@
     }
 
     .card-footer {
+      padding-bottom: $pad-onehalf;
       text-align: center;
 
-      button {
+      h3 {
+        margin-bottom: $mrg-onehalf;
+      }
+
+      a {
         box-shadow: $shadow-tertiary;
         border: none;
         border-radius: 5px;
@@ -42,7 +47,6 @@
         font-family: $family-title;
         font-weight: 500;
         font-size: toRem(1.25);
-        margin: $mrg-quarter 0;
         padding: $pad-quarter;
         transition: $transition-bezier;
 

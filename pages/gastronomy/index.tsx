@@ -52,7 +52,9 @@ export async function getServerSideProps(context: any) {
     .json()
     .then((response) => response.meals)
     .catch((e) => console.log(e));
+
   const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeByCountry(recipe));
+
   return {
     props: { country, recipes },
   };

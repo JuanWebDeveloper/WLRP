@@ -1,6 +1,7 @@
 import Image from 'next/image';
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
+import Link from 'next/link';
 
 export const Card = (props: Recipes | any) => {
   const { recipe }: Recipes | any = props;
@@ -14,7 +15,9 @@ export const Card = (props: Recipes | any) => {
         </div>
         <div className='card-footer'>
           <h3>Do you like it?</h3>
-          <button className='button-default'>Learn How To Do It</button>
+          <Link href={`/recipe?ir=${recipe.idRecipe}`} className='button-default'>
+            Learn How To Do It
+          </Link>
         </div>
       </div>
     </div>
