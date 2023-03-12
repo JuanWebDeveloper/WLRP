@@ -4,7 +4,7 @@
   min-height: 100vh;
   position: relative;
   place-items: center;
-  padding-top: 2.2rem;
+  padding-top: 3rem;
   width: 100vw;
 
   .content {
@@ -40,7 +40,9 @@
           transition: $transition-bezier;
 
           &:hover {
+            scale: 1.05;
             transform: skew(5deg);
+            text-shadow: $shadow-quarter-text;
           }
         }
       }
@@ -88,6 +90,7 @@
           &:not(:placeholder-shown) + label {
             color: $blue;
             font-weight: 600;
+            text-shadow: $shadow-quarter-text;
             transform: translateY(-25px) scale(0.95);
             transform-origin: top left;
           }
