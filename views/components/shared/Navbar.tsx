@@ -10,13 +10,9 @@ export const Navbar = () => {
   useEffect(() => {
     setCountrie(countries[Math.floor(Math.random() * countries.length)].name);
 
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= 40) {
-        setOnScroll(true);
-      } else {
-        setOnScroll(false);
-      }
-    });
+    const detectScroll = () => (window.scrollY >= 40 ? setOnScroll(true) : setOnScroll(false));
+    detectScroll();
+    window.addEventListener('scroll', () => detectScroll());
   }, []);
 
   const toggleNavigation = () => {
