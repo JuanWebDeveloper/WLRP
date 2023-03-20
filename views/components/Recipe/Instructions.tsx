@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import YouTube from 'react-youtube';
 
 export const Instructions = () => {
-  const videoUrl = 'https://www.youtube.com/watch?v=YsJXZwE5pdY&ab_channel=HristijanKonesky';
+  const videoUrl: any = 'https://www.youtube.com/watch?v=YsJXZwE5pdY&ab_channel=HristijanKonesky';
   const videoId = videoUrl.match(/youtube\.com\/watch\?v=([^&]+)/)[1];
 
   return (
