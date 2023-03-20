@@ -1,0 +1,91 @@
+.ingredients-slider {
+  margin-top: $mrg-triple;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  h2 {
+    margin-bottom: $mrg-double;
+    text-align: center;
+  }
+
+  .slider-content {
+    height: 50vh;
+    position: relative;
+    width: 100%;
+
+    .ingredient {
+      @include scaleXY-out;
+      background-color: darken($tertiary, 5);
+      height: 100%;
+      left: -100%;
+      position: relative;
+      padding: $pad-quarter;
+      top: 0;
+      width: 100%;
+
+      h2 {
+        color: $black;
+        margin-bottom: $mrg-base;
+      }
+
+      &-content {
+        align-items: center;
+        display: flex;
+        height: 70%;
+        justify-content: center;
+        width: 100%;
+
+        .ingredient-image {
+          height: 100%;
+          margin-right: $mrg-triple;
+          width: 300px;
+
+          img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        .ingredient-measure {
+          margin-left: $mrg-triple;
+
+          .span-t {
+            font-size: toRem(4.5);
+          }
+        }
+      }
+
+      &.active {
+        @include scaleXY-in;
+        left: 0;
+      }
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: space-between;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      z-index: 5;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: $blue;
+        cursor: pointer;
+        font-size: toRem(2);
+        transition: $transition-bezier;
+
+        &:hover {
+          scale: 1.2;
+          text-shadow: $shadow-quarter-text;
+        }
+      }
+    }
+  }
+}

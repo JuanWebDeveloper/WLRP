@@ -1,0 +1,25 @@
+.recipe-instructions {
+  margin: $mrg-triple auto;
+  position: relative;
+  width: 90%;
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    font-size: toRem(1.5);
+  }
+}
+
+.video-recipe {
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  width: 90%;
+
+  iframe {
+    box-shadow: $shadow-primary;
+    border-radius: 5px;
+  }
+}
