@@ -10,14 +10,10 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
   const [quantity, setQuantity] = useState(recipeQuantity);
 
   // Updates the grid state with the new gridText value to change the display of the recipe cards
-  const onChangeGrid = (gridText: string) => {
-    setGrid(gridText);
-  };
+  const onChangeGrid = (gridText: string) => setGrid(gridText);
 
-  const { formValues, handleInputChange } = useForm({
-    search: '',
-  });
-
+  // User search handling
+  const { formValues, handleInputChange } = useForm({ search: '' });
   const { search }: any = formValues;
 
   // Changes the CSS class of the search element based on the focus value
@@ -32,6 +28,9 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
       search?.classList.remove('scale');
     }
   };
+
+  // Validation to prevent pressing Enter if a search has not been performed
+  const handleKeyDown = (e: any) => e.key === 'Enter' && search.length < 1 && e.preventDefault();
 
   // This function fetches search results from the backend API and updates the card content with the response
   const handleTheSearch = async (e: any) => {
@@ -92,12 +91,12 @@ export const ViewOptions = ({ grid, setGrid, setCardsContent, setNoRecipe, setLo
             onBlur={() => searchScale(false)}
             value={search}
             onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
           />
           <button className={`button-default ${search.length < 1 && 'none'}`}>
             <i className='fa-solid fa-magnifying-glass'></i>
           </button>
         </form>
-        <div className='search-filter'></div>
       </div>
     </div>
   );
