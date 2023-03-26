@@ -1,6 +1,7 @@
 import { useState } from 'react';
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
+import { ApiResponse } from '../core/models/ApiResponse';
 // Import of mapRecipeForCards function used to map recipe data
 import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
@@ -57,12 +58,12 @@ export const getStaticProps = async () => {
   const baseUrl: string = `https://www.themealdb.com/api/json/v1/1/search.php?s=${randomFood.replace(/\s/g, '&')}`;
   const response: Response = await fetch(baseUrl);
 
-  const data: any = await response
+  const data: ApiResponse[] = await response
     .json()
     .then((response) => response.meals)
     .catch((e) => console.log(e));
 
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeForCards(recipe));
+  const recipes: Recipes[] = data.map((recipe: Object) => mapRecipeForCards(recipe));
 
   return {
     props: {
