@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { GetStaticPropsContext, GetStaticPaths } from 'next';
 // Interface
 import { Recipes } from '@/core/models/Recipes';
+import { ApiResponse } from '@/core/models/ApiResponse';
 // Mapper
 import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { initialGrid } from '@/core/utils/initialGrid';
+import { countries } from '@/core/utils/countries';
 // Components of the page
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
@@ -43,19 +46,26 @@ const GastronomyByCountry = (props: any) => {
 
 export default GastronomyByCountry;
 
-export async function getServerSideProps(context: any) {
-  const { country }: any = context.query;
+export const getStaticPaths: GetStaticPaths = () => ({
+  paths: countries.map((country) => ({ params: { country: country.name } })),
+  fallback: false,
+});
+
+export const getStaticProps = async (context: GetStaticPropsContext<{ country: string }>) => {
+  const country: string | undefined = context.params?.country;
+
+  !country && { notFound: true };
 
   const response: Response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`);
 
-  const data: any = await response
+  const data: ApiResponse[] = await response
     .json()
     .then((response) => response.meals)
     .catch((e) => console.log(e));
 
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeForCards(recipe));
+  const recipes: Recipes[] = data.map((recipe: Object) => mapRecipeForCards(recipe));
 
   return {
     props: { country, recipes },
   };
-}
+};
