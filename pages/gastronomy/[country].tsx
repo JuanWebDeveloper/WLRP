@@ -48,12 +48,12 @@ const GastronomyByCountry = (props: any) => {
 export default GastronomyByCountry;
 
 export const getStaticPaths: GetStaticPaths = () => ({
-  paths: countries.map((country) => ({ params: { country: country.name } })),
+  paths: countries.map((country) => ({ params: { country: country.name.toLowerCase() } })),
   fallback: false,
 });
 
 export const getStaticProps = async (context: GetStaticPropsContext<{ country: string }>) => {
-  const country: string | undefined = context.params?.country;
+  const country: string | undefined = context.params?.country.toUpperCase();
 
   !country && { notFound: true };
 

@@ -58,7 +58,9 @@ export const Navbar = () => {
           <Link href='/about'>About</Link>
         </li>
         <li>
-          <Link href={{ pathname: 'gastronomy/[country]', query: { country: countrie } }}>Gastronomy by country</Link>
+          <Link href={{ pathname: '/gastronomy/[country]', query: { country: countrie.toLowerCase() } }}>
+            Gastronomy by country
+          </Link>
         </li>
         <li>
           <Link href='/faqs'>FAQ&apos;S</Link>

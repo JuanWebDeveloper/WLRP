@@ -9,7 +9,7 @@ export const CountriesFilter = () => {
       <div className='countries'>
         {countries.map((country: any) => (
           <div key={country.name}>
-            <Link href={`gastronomy/?country=${country.name}`}>
+            <Link href={{ pathname: '/gastronomy/[country]', query: { country: country.name.toLowerCase() } }}>
               <Image src={country.image} alt={country.name} height={50} width={100} />
             </Link>
           </div>
