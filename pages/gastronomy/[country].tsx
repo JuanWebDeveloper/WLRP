@@ -8,6 +8,7 @@ import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { initialGrid } from '@/core/utils/initialGrid';
 import { countries } from '@/core/utils/countries';
+import { BaseURL } from '@/core/utils/baseURL';
 // Components of the page
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
@@ -56,7 +57,7 @@ export const getStaticProps = async (context: GetStaticPropsContext<{ country: s
 
   !country && { notFound: true };
 
-  const response: Response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${country}`);
+  const response: Response = await fetch(`${BaseURL}/filter.php?a=${country}`);
 
   const data: ApiResponse[] = await response
     .json()

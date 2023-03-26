@@ -4,6 +4,7 @@ import { Recipes } from '@/core/models/Recipes';
 import { ApiResponse } from '../core/models/ApiResponse';
 // Import of mapRecipeForCards function used to map recipe data
 import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
+import { BaseURL } from '@/core/utils/baseURL';
 // Utils
 import { initialGrid } from '@/core/utils/initialGrid';
 // Import components of the page
@@ -55,8 +56,7 @@ export const getStaticProps = async () => {
   const foods: string[] = ['Chicken breast', 'Salmon', 'Beef steak', 'Pork chops'];
   const randomFood: string = foods[Math.floor(Math.random() * foods.length)];
 
-  const baseUrl: string = `https://www.themealdb.com/api/json/v1/1/search.php?s=${randomFood.replace(/\s/g, '&')}`;
-  const response: Response = await fetch(baseUrl);
+  const response: Response = await fetch(`${BaseURL}/search.php?s=${randomFood.replace(/\s/g, '&')}`);
 
   const data: ApiResponse[] = await response
     .json()
