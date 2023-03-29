@@ -15,7 +15,7 @@ export const Card = (props: Recipes | any) => {
         </div>
         <div className='card-footer'>
           <h3>Do you like it?</h3>
-          <Link href={`/recipe?ir=${recipe.idRecipe}`} className='button-default'>
+          <Link href={{ pathname: '/recipe/[idrecipe]', query: { idrecipe: recipe.idRecipe } }} className='button-default'>
             Learn How To Do It
           </Link>
         </div>
