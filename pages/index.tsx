@@ -14,8 +14,8 @@ import { Card } from '@/views/components/shared/Card';
 import { Loading } from '@/views/components/shared/Loading';
 import { NoRecipe } from '@/views/components/shared/NoRecipe';
 
-const Home = (props: Recipes[]) => {
-  const { recipes }: Recipes | any = props;
+const Home = (props: { recipes: Recipes[] }) => {
+  const recipes: Recipes[] | undefined = props.recipes;
   const [grid, setGrid] = useState(initialGrid(recipes.length));
   const [cardsContent, setCardsContent] = useState(recipes);
   const [noRecipe, setNoRecipe] = useState({ search: '', noRecipe: false });
@@ -65,9 +65,5 @@ export const getStaticProps = async () => {
 
   const recipes: Recipes[] = data.map((recipe: Object) => mapRecipeForCards(recipe));
 
-  return {
-    props: {
-      recipes,
-    },
-  };
+  return { props: { recipes } };
 };

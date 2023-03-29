@@ -14,8 +14,8 @@ import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
 
-const GastronomyByCountry = (props: any) => {
-  const { recipes }: any = props;
+const GastronomyByCountry = (props: { recipes: Recipes[] }) => {
+  const recipes: Recipes[] = props.recipes;
   const [grid, setGrid] = useState(initialGrid(recipes.length));
   const [cardsContent, setCardsContent] = useState(recipes);
   const [loading, setLoading] = useState(false);
@@ -55,8 +55,6 @@ export const getStaticPaths: GetStaticPaths = () => ({
 export const getStaticProps = async (context: GetStaticPropsContext<{ country: string }>) => {
   const country: string | undefined = context.params?.country.toUpperCase();
 
-  !country && { notFound: true };
-
   const response: Response = await fetch(`${BaseURL}/filter.php?a=${country}`);
 
   const data: ApiResponse[] = await response
@@ -66,7 +64,5 @@ export const getStaticProps = async (context: GetStaticPropsContext<{ country: s
 
   const recipes: Recipes[] = data.map((recipe: Object) => mapRecipeForCards(recipe));
 
-  return {
-    props: { country, recipes },
-  };
+  return { props: { recipes } };
 };
