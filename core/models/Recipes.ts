@@ -7,4 +7,5 @@ export interface Recipes {
   ingredientsImages?: Array<string>;
   measures?: Array<string>;
   countryOrigin?: string;
+  video?: string;
 }

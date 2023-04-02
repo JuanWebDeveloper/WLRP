@@ -1,7 +1,7 @@
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
 // Import of mapRecipe function used to map recipe data
-import { mapRecipe } from '@/core/mappers/mapperRecipesData';
+import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { BaseURL } from '@/core/utils/baseURL';
 
@@ -25,7 +25,7 @@ const search = async (query: string) => {
     .json()
     .then((response) => response.meals)
     .catch((e) => console.log(e));
-  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipe(recipe));
+  const recipes: Recipes[] = data?.map((recipe: Object) => mapRecipeForCards(recipe));
 
   // Return the recipes obtained from the API
   return recipes;
