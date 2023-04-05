@@ -6,8 +6,8 @@ export const mapRecipe = (recipeData: Object | any): Recipes => {
   const ingredients: Array<string> = [];
 
   for (let i = 0; i < 20; i++) {
-    if (recipeData[`strIngredient${i}`] && recipeData[`strIngredient${i}`] !== '') {
-      ingredients.push(recipeData[`strIngredient${i}`]);
+    if (recipeData[`strIngredient${i + 1}`] && recipeData[`strIngredient${i + 1}`] !== '') {
+      ingredients.push(recipeData[`strIngredient${i + 1}`]);
     }
   }
 
@@ -18,7 +18,7 @@ export const mapRecipe = (recipeData: Object | any): Recipes => {
     instructions: recipeData.strInstructions,
     ingredients,
     ingredientsImages: ingredients.map((ingredient) => `https://www.themealdb.com/images/ingredients/${ingredient}.png`),
-    measures: ingredients.map((_, i) => recipeData[`strMeasure${i}`]),
+    measures: ingredients.map((_, i) => recipeData[`strMeasure${i + 1}`]),
     countryOrigin: recipeData.strArea,
     video: recipeData.strYoutube,
   };
