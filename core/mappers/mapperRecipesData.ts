@@ -20,6 +20,7 @@ export const mapRecipe = (recipeData: Object | any): Recipes => {
     ingredientsImages: ingredients.map((ingredient) => `https://www.themealdb.com/images/ingredients/${ingredient}.png`),
     measures: ingredients.map((_, i) => recipeData[`strMeasure${i + 1}`]),
     countryOrigin: recipeData.strArea,
+    category: recipeData.strCategory,
     video: recipeData.strYoutube,
   };
 

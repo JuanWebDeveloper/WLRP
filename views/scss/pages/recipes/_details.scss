@@ -58,20 +58,5 @@
         text-shadow: none;
       }
     }
-
-    .recipe-tags {
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        max-width: 60%;
-        margin: 0 auto;
-
-        .span-t {
-          font-size: toRem(1.2);
-          margin: $mrg-quarter;
-        }
-      }
-    }
   }
 }

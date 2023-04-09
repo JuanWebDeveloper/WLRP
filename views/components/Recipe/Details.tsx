@@ -1,32 +1,19 @@
 import Image from 'next/image';
 
-export const Details = () => {
+export const Details = ({ recipes }: any) => {
   return (
     <div className='recipe-details'>
       <div className='recipe-image'>
-        <Image
-          src={'https://www.themealdb.com/images/media/meals/xvsurr1511719182.jpg'}
-          alt={'Apple & Blackberry Crumble'}
-          width={200}
-          height={200}
-        />
+        <Image src={recipes.image} alt={recipes.name} width={200} height={200} />
       </div>
       <div className='details'>
-        <h2>Apple & Blackberry Crumble </h2>
+        <h2>{recipes.name}</h2>
         <h3>
-          <span>Category:</span> Dessert
+          <span>Category:</span> {recipes.category}
         </h3>
         <h3>
-          <span>Origin:</span> British
+          <span>Origin:</span> {recipes.countryOrigin}
         </h3>
-        <div className='recipe-tags'>
-          <h3>Tags</h3>
-          <div className='tags'>
-            <span className='span-t'>Pudding</span>
-            <span className='span-t'>Pudding</span>
-            <span className='span-t'>Pudding</span>
-          </div>
-        </div>
       </div>
     </div>
   );

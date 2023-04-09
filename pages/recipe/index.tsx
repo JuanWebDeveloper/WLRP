@@ -11,13 +11,15 @@ import { mapRecipe } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { BaseURL } from '@/core/utils/baseURL';
 
-const Recipe = () => {
+const Recipe = (props: any) => {
+  const recipes: Recipes = props.recipes;
+
   return (
     <div className='recipe'>
       <div className='recipe-content'>
-        <Details />
-        <Slider />
-        <Instructions />
+        <Details recipes={recipes} />
+        <Slider recipes={recipes} />
+        <Instructions recipes={recipes} />
       </div>
     </div>
   );
