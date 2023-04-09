@@ -6,26 +6,6 @@
   padding-bottom: toRem(3);
   width: 100vw;
 
-  .span-t {
-    background-color: darken($tertiary, 15);
-    box-shadow: inset -2px -2px 5px rgba($black, 0.5), inset 2px 2px 5px rgba($black, 0.5);
-    border-radius: 5px;
-    color: $blue;
-    cursor: pointer;
-    font-family: $family-title;
-    font-weight: 600;
-    position: relative;
-    padding: $pad-quarter $pad-half;
-    transform: skew(-15deg);
-    transition: $transition-bezier;
-
-    &:hover {
-      scale: 1.1;
-      transform: skew(5deg);
-      text-shadow: $shadow-quarter-text;
-    }
-  }
-
   &-content {
     position: relative;
     width: 100%;
