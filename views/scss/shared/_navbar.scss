@@ -77,7 +77,7 @@
       &::after {
         @include scaleX-out;
         background-color: $blue;
-        box-shadow: $shadow-quarter;
+        box-shadow: $shadow-fourth;
         bottom: 0;
         content: '';
         height: 3px;
@@ -105,7 +105,7 @@
 
         a {
           color: $blue;
-          text-shadow: $shadow-quarter-text;
+          text-shadow: $shadow-fourth-text;
         }
       }
 

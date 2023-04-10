@@ -42,7 +42,7 @@
           &:hover {
             scale: 1.05;
             transform: skew(5deg);
-            text-shadow: $shadow-quarter-text;
+            text-shadow: $shadow-fourth-text;
           }
         }
       }
@@ -90,7 +90,7 @@
           &:not(:placeholder-shown) + label {
             color: $blue;
             font-weight: 600;
-            text-shadow: $shadow-quarter-text;
+            text-shadow: $shadow-fourth-text;
             transform: translateY(-25px) scale(0.95);
             transform-origin: top left;
           }

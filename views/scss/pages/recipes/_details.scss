@@ -54,12 +54,12 @@
       font-size: toRem(2.5);
       font-weight: 500;
       text-transform: capitalize;
-      text-shadow: $shadow-quarter;
+      text-shadow: $shadow-fourth;
     }
 
     h3 {
       font-size: toRem(2);
-      text-shadow: $shadow-quarter;
+      text-shadow: $shadow-fourth;
 
       span {
         color: $black;
