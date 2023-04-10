@@ -1,10 +1,12 @@
 import { Fragment } from 'react';
 // Component to display videos
 import YouTube from 'react-youtube';
+import URLParse from 'url-parse';
 
 export const Instructions = ({ recipes }: any) => {
-  const videoUrl: any = recipes.video;
-  const videoId = videoUrl.match(/youtube\.com\/watch\?v=([^&]+)/)[1];
+  const videoUrl = recipes.video;
+  const parsedUrl = new URLParse(videoUrl, true);
+  const videoId = parsedUrl.query.v;
 
   return (
     <Fragment>
