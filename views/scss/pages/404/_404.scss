@@ -9,6 +9,7 @@
   width: 100vw;
 
   &_image {
+    @include scaleXY-faded-in;
     position: relative;
     margin-top: $mrg-triple;
     width: 45%;

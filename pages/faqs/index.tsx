@@ -1,8 +1,12 @@
+import { MouseEvent, Fragment } from 'react';
+// Utils
 import { frequentlyQuestions } from '@/core/utils/frequentlyQuestions';
+// Head
+import { MyHead } from '@/views/components/shared/Head';
 
 const FAQS = () => {
-  const toggleAnswer = (event: any): void => {
-    const currentQuestionAnswer = event.target.parentNode.querySelector('.answer');
+  const toggleAnswer = (event: MouseEvent<HTMLDivElement>): void => {
+    const currentQuestionAnswer = event.currentTarget?.parentNode?.querySelector('.answer');
     const answers = document.querySelectorAll('.answer');
     const questions = document.querySelectorAll('.question');
 
@@ -18,21 +22,24 @@ const FAQS = () => {
   };
 
   return (
-    <div className='faqs'>
-      <h2>
-        <span>FAQ&lsquo;S</span>
-      </h2>
-      <div className='content'>
-        {frequentlyQuestions.map((faq, i) => (
-          <div key={i} className='faq'>
-            <div className='question' onClick={toggleAnswer}>
-              {faq.question} <i className='fas fa-plus'></i>
+    <Fragment>
+      <MyHead titleName='Frequent Questions' />
+      <div className='faqs'>
+        <h2>
+          <span>FAQ&lsquo;S</span>
+        </h2>
+        <div className='content'>
+          {frequentlyQuestions.map((faq, i) => (
+            <div key={i} className='faq'>
+              <div className='question' onClick={toggleAnswer}>
+                {faq.question} <i className='fas fa-plus'></i>
+              </div>
+              <div className='answer'>{faq.answer}</div>
             </div>
-            <div className='answer'>{faq.answer}</div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

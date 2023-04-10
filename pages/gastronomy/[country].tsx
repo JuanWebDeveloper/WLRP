@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { GetStaticPropsContext, GetStaticPaths } from 'next';
+import { useRouter } from 'next/router';
 // Interface
 import { Recipes } from '@/core/models/Recipes';
 import { ApiResponse } from '@/core/models/ApiResponse';
@@ -13,35 +14,43 @@ import { BaseURL } from '@/core/utils/baseURL';
 import { CountriesFilter } from '@/views/components/Gastronomy/CountriesFilter';
 import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
+// Head
+import { MyHead } from '@/views/components/shared/Head';
 
 const GastronomyByCountry = (props: { recipes: Recipes[] }) => {
   const recipes: Recipes[] = props.recipes;
   const [grid, setGrid] = useState(initialGrid(recipes.length));
   const [cardsContent, setCardsContent] = useState(recipes);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  let country: any = router.query.country;
+  country = country.charAt(0).toUpperCase() + country.slice(1);
 
   return (
-    <div className='gastronomy-country'>
-      <div className='content'>
-        <CountriesFilter />
-        <ViewOptions
-          grid={grid}
-          setGrid={setGrid}
-          setCardsContent={setCardsContent}
-          setLoading={setLoading}
-          recipeQuantity={recipes.length}
-          style={{ display: 'none' }}
-        />
+    <Fragment>
+      <MyHead titleName={`Discover ${country} Gastronomy`} />
+      <div className='gastronomy-country'>
+        <div className='content'>
+          <CountriesFilter />
+          <ViewOptions
+            grid={grid}
+            setGrid={setGrid}
+            setCardsContent={setCardsContent}
+            setLoading={setLoading}
+            recipeQuantity={recipes.length}
+            style={{ display: 'none' }}
+          />
 
-        {cardsContent.length >= 1 && !loading && (
-          <div className={`cards ${grid}`}>
-            {cardsContent.map((recipe: Recipes | any) => (
-              <Card key={recipe.idRecipe} recipe={recipe} />
-            ))}
-          </div>
-        )}
+          {cardsContent.length >= 1 && !loading && (
+            <div className={`cards ${grid}`}>
+              {cardsContent.map((recipe: Recipes | any) => (
+                <Card key={recipe.idRecipe} recipe={recipe} />
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
@@ -53,7 +62,7 @@ export const getStaticPaths: GetStaticPaths = () => ({
 });
 
 export const getStaticProps = async (context: GetStaticPropsContext<{ country: string }>) => {
-  const country: string | undefined = context.params?.country.toUpperCase();
+  const country: string | undefined = context.params?.country;
 
   const response: Response = await fetch(`${BaseURL}/filter.php?a=${country}`);
 

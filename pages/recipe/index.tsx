@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { GetServerSidePropsContext } from 'next';
 // Import components of the page
 import { Details } from '@/views/components/Recipe/Details';
@@ -10,18 +11,23 @@ import { ParsedUrlQuery } from 'querystring';
 import { mapRecipe } from '@/core/mappers/mapperRecipesData';
 // Utils
 import { BaseURL } from '@/core/utils/baseURL';
+// Head
+import { MyHead } from '@/views/components/shared/Head';
 
 const Recipe = (props: any) => {
   const recipes: Recipes = props.recipes;
 
   return (
-    <div className='recipe'>
-      <div className='recipe-content'>
-        <Details recipes={recipes} />
-        <Slider recipes={recipes} />
-        <Instructions recipes={recipes} />
+    <Fragment>
+      <MyHead titleName={recipes.name} />
+      <div className='recipe'>
+        <div className='recipe-content'>
+          <Details recipes={recipes} />
+          <Slider recipes={recipes} />
+          <Instructions recipes={recipes} />
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 

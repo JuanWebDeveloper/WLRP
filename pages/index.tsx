@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 // Interface of the necessary data for the recipes
 import { Recipes } from '@/core/models/Recipes';
 import { ApiResponse } from '../core/models/ApiResponse';
@@ -13,6 +13,8 @@ import { ViewOptions } from '@/views/components/shared/ViewOptions';
 import { Card } from '@/views/components/shared/Card';
 import { Loading } from '@/views/components/shared/Loading';
 import { NoRecipe } from '@/views/components/shared/NoRecipe';
+// Head
+import { MyHead } from '@/views/components/shared/Head';
 
 const Home = (props: { recipes: Recipes[] }) => {
   const recipes: Recipes[] | undefined = props.recipes;
@@ -22,29 +24,32 @@ const Home = (props: { recipes: Recipes[] }) => {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className='home'>
-      <div className='content'>
-        <Header />
-        <ViewOptions
-          grid={grid}
-          setGrid={setGrid}
-          setCardsContent={setCardsContent}
-          setNoRecipe={setNoRecipe}
-          setLoading={setLoading}
-          recipeQuantity={recipes.length}
-        />
+    <Fragment>
+      <MyHead titleName='Welcom To World Recipes' />
+      <div className='home'>
+        <div className='content'>
+          <Header />
+          <ViewOptions
+            grid={grid}
+            setGrid={setGrid}
+            setCardsContent={setCardsContent}
+            setNoRecipe={setNoRecipe}
+            setLoading={setLoading}
+            recipeQuantity={recipes.length}
+          />
 
-        {cardsContent.length >= 1 && !loading && (
-          <div className={`cards ${grid}`}>
-            {cardsContent.map((recipe: Recipes | any) => (
-              <Card key={recipe.idRecipe} recipe={recipe} />
-            ))}
-          </div>
-        )}
-        {noRecipe.noRecipe && !loading && <NoRecipe message={`Sorry, no recipe ${noRecipe.search}.`} />}
-        {loading && <Loading />}
+          {cardsContent.length >= 1 && !loading && (
+            <div className={`cards ${grid}`}>
+              {cardsContent.map((recipe: Recipes | any) => (
+                <Card key={recipe.idRecipe} recipe={recipe} />
+              ))}
+            </div>
+          )}
+          {noRecipe.noRecipe && !loading && <NoRecipe message={`Sorry, no recipe ${noRecipe.search}.`} />}
+          {loading && <Loading />}
+        </div>
       </div>
-    </div>
+    </Fragment>
   );
 };
 
