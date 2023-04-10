@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div className='not-found'>
       <div className='not-found_image'>
-        <Image src={notFound} alt={'Not Found Image'} width={'976'} height={'549'} />
+        <Image src={notFound} alt={'Not Found Image'} width={'976'} height={'549'} loading='eager' />
       </div>
       <div className='not-found_text'>
         <h2>Uh oh! The page you&apos;re looking for can&apos;t be found.</h2>

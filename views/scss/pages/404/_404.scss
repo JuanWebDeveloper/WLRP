@@ -17,6 +17,14 @@
       height: 100%;
       width: 100%;
     }
+
+    @media (max-width: 1024px) {
+      width: 80%;
+    }
+
+    @media (max-width: 500px) {
+      width: 90%;
+    }
   }
 
   &_text {
@@ -38,6 +46,16 @@
       opacity: 0.8;
       text-shadow: $shadow-fifth-text;
       text-transform: capitalize;
+    }
+
+    @media (max-width: 500px) {
+      h2 {
+        font-size: toRem(1.75);
+      }
+
+      h3 {
+        font-size: toRem(1.25);
+      }
     }
   }
 }
