@@ -1,0 +1,43 @@
+.not-found {
+  align-items: center;
+  background-color: darken($tertiary, 15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+
+  &_image {
+    position: relative;
+    margin-top: $mrg-triple;
+    width: 45%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &_text {
+    position: relative;
+    text-align: center;
+    width: 90%;
+
+    h2 {
+      font-size: toRem(2.5);
+      font-weight: 600;
+      text-shadow: $shadow-fourth-text;
+      text-transform: capitalize;
+    }
+
+    h3 {
+      color: $black;
+      font-size: toRem(1.85);
+      font-weight: 500;
+      opacity: 0.8;
+      text-shadow: $shadow-fifth-text;
+      text-transform: capitalize;
+    }
+  }
+}
