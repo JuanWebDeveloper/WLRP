@@ -19,7 +19,14 @@
   width: 90%;
 
   iframe {
+    @include scaleXY-in;
     box-shadow: $shadow-primary;
     border-radius: 5px;
+  }
+
+  @media (max-width: 725px) {
+    iframe {
+      width: 100%;
+    }
   }
 }

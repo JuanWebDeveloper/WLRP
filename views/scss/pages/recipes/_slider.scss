@@ -10,17 +10,16 @@
   }
 
   .slider-content {
-    height: 70vh;
+    height: 450px;
     position: relative;
     width: 100%;
 
     .ingredient {
-      @include scaleXY-out;
+      @include scaleXY-faded-in;
       background-color: darken($tertiary, 5);
       height: 100%;
       left: -100%;
       position: absolute;
-      padding-bottom: $pad-quarter;
       top: 0;
       width: 100%;
 
@@ -49,6 +48,7 @@
 
         .ingredient-measure {
           margin-top: $mrg-triple;
+          text-align: center;
 
           .span-t {
             background-color: darken($tertiary, 15);
@@ -57,9 +57,17 @@
             color: $blue;
             font-family: $family-title;
             font-weight: 600;
-            font-size: toRem(3);
-            line-height: toRem(3.2);
+            font-size: toRem(2.5);
+            line-height: toRem(4.5);
             padding: $pad-quarter $pad-half;
+          }
+
+          @media (max-width: 700px) {
+            .span-t {
+              font-size: toRem(1.85);
+              font-weight: 500;
+              line-height: toRem(3.85);
+            }
           }
         }
       }
@@ -93,6 +101,14 @@
           text-shadow: $shadow-quarter-text;
         }
       }
+    }
+
+    @media (max-width: 700px) {
+      height: 400px;
+    }
+
+    @media (max-width: 400px) {
+      height: 425px;
     }
   }
 }

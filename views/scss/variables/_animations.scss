@@ -71,6 +71,33 @@ $transition-bezier-secondary: all 0.6s cubic-bezier(0.17, 0.67, 0.8, 0.62);
   }
 }
 
+@mixin scaleXY-faded-in {
+  animation: scaleXY-faded-in 0.35s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes scaleXY-faded-in {
+  0% {
+    transform: scaleX(0) scaleY(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scaleX(0.25) scaleY(0.25);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scaleX(0.5) scaleY(0.5);
+    opacity: 0.5;
+  }
+  75% {
+    transform: scaleX(0.75) scaleY(0.75);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
+}
+
 @mixin scaleXY-out {
   animation: scaleXY-out 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }

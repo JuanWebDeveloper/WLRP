@@ -16,7 +16,7 @@ export const Slider = ({ recipes }: any) => {
             <h2>{slide}</h2>
             <div className='ingredient-content'>
               <div className='ingredient-image'>
-                <Image src={recipes.ingredientsImages[index]} alt={slide} width={100} height={100} />
+                <Image src={recipes.ingredientsImages[index]} alt={slide} width={100} height={100} loading='eager' />
               </div>
               <div className='ingredient-measure'>
                 <span className='span-t'>{recipes.measures[index]}</span>
