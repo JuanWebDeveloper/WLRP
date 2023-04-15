@@ -2,8 +2,6 @@
 import { Recipes } from '@/core/models/Recipes';
 // Import of mapRecipe function used to map recipe data
 import { mapRecipeForCards } from '@/core/mappers/mapperRecipesData';
-// Utils
-import { BaseURL } from '@/core/utils/baseURL';
 
 const handler = async (req: any, res: any) => {
   // Get the search query.
@@ -18,7 +16,7 @@ const handler = async (req: any, res: any) => {
 
 const search = async (query: string) => {
   // Make a request to TheMealDB API to get recipes
-  const response: Response = await fetch(`${BaseURL}/search.php?s=${query}`);
+  const response: Response = await fetch(`${process.env.API_URL}/search.php?s=${query}`);
 
   // Handle the API response and extract necessary data
   const data: any = await response

@@ -9,8 +9,6 @@ import { Recipes } from '@/core/models/Recipes';
 import { ParsedUrlQuery } from 'querystring';
 // Mapper
 import { mapRecipe } from '@/core/mappers/mapperRecipesData';
-// Utils
-import { BaseURL } from '@/core/utils/baseURL';
 // Head
 import { MyHead } from '@/views/components/shared/Head';
 
@@ -40,7 +38,7 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
     return { notFound: true };
   }
 
-  const response: Response = await fetch(`${BaseURL}/lookup.php?i=${ir}`)
+  const response: Response = await fetch(`${process.env.API_URL}/lookup.php?i=${ir}`)
     .then((response) => response.json())
     .then((data) => data.meals[0])
     .catch((e) => console.log(e));
